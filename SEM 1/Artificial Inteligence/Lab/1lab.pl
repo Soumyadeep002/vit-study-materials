@@ -1,0 +1,16 @@
+parent(pam,bob).
+parent(tom,bob).
+parent(tom,liz).
+parent(bob,ann).
+parent(bob,pat).
+parent(pat,jim).
+female(liz).
+female(ann).
+female(pat).
+female(pam).
+male(tom).
+male(bob).
+male(jim).
+mother(X,Y):-parent(X,Y),female(X).
+predecessor(X,Y):-parent(X,Y).
+predecessor(X,Z):-parent(X,Y),predecessor(Y,Z).
